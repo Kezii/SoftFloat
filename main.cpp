@@ -54,7 +54,7 @@ public:
         cout << number.bits.sign << " " << number.bits.exp << " " <<number.bits.mantissa << endl;
     }
 
-    kloat operator = (kloat n){
+    kloat& operator = (kloat n){
         number= n.number;
         return *this;
     }
@@ -63,7 +63,7 @@ public:
         return number.fl;
     }
 
-    kloat operator + (kloat other){
+    kloat& operator + (kloat other){
 
         kloat ret;
 
@@ -131,17 +131,17 @@ public:
     }
 
 
-    kloat operator - (kloat other){
+    kloat& operator - (kloat other){
         other.number.bits.sign=!other.number.bits.sign;
         return *this + other;
     }
 
-    kloat operator += (kloat other){
+    kloat& operator += (kloat other){
         *this = *this + other;
         return *this;
     }
 
-    kloat operator -= (kloat other){
+    kloat& operator -= (kloat other){
         *this = *this - other;
         return *this;
     }
